@@ -62,6 +62,7 @@ cat /etc/fstab
 sed -i 's/^rw,relatime/rw,discard,relatime/g' /etc/fstab
 cat /etc/fstab
 ```
+### Allow root ssh for later
 ```
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 passwd
@@ -96,6 +97,7 @@ visudo
 useradd -m -G wheel -s /bin/bash pascal
 passwd pascal
 ```
+### Disable root ssh
 ```
 sed -i 's/PermitRootLogin yes/#PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
 exit
