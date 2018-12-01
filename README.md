@@ -26,7 +26,6 @@ n
 2
 ENTER
 ENTER
-
 ```
 ```
 mkfs.fat -F32 /dev/sda1
@@ -35,11 +34,11 @@ mount /dev/sda2 /mnt
 pacstrap -i /mnt base
 genfstab -U -p /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
-
 ```
+### uncomment en_GB.UTF-8
 ```
 pacman -S grub efibootmgr dosfstools openssh os-prober mtools linux-headers linux-lts linux-lts-headers
-vi /etc/locale.gen (uncomment en_GB.UTF-8)
+vi /etc/locale.gen
 ```
 ```
 locale-gen
