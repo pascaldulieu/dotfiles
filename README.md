@@ -88,6 +88,10 @@ vi /etc/pacman.conf
 ```
 pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm lightdm-gtk-greeter bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop
 ```
+```
+systemctl enable NetworkManager
+systemctl start NetworkManager
+```
 ### Uncomment %wheel ALL=(ALL) ALL
 ```
 visudo
@@ -123,8 +127,18 @@ sudo wget https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/Syst
 fc-cache
 ```
 ```
-yaourt -S polybar python-pywal ttf-hack bdf-unifont siji-git i3lock-color nerd-fonts-hack nerd-fonts-source-code-pro pulseaudio-dlna flameshot-git
+yaourt -S polybar python-pywal ttf-hack bdf-unifont siji-git i3lock-color nerd-fonts-hack nerd-fonts-source-code-pro pulseaudio-dlna flameshot-git arc-grk-theme lxapperarance
 ```
 ```
+git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-theme && ./autogen.sh --prefix=/usr && sudo make install && cd && rm -rf arc-icon-theme
 git clone https://github.com/alexanderjeurissen/ranger_devicons.git /tmp/ranger_devicons && cd /tmp/ranger_devicons && make install && cd && rm -rf /tmp/ranger_devicons
 ```
+
+
+```
+vim .grkrc-2.0
+  gtk-font-name="System San Francisco Display 11"
+vim .config/gtk-3.0/settings.ini
+  gtk-font-name="System San Francisco Display 11"
+```
+
