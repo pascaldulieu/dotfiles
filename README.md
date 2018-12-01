@@ -91,6 +91,7 @@ pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel
 ```
 systemctl enable NetworkManager
 systemctl start NetworkManager
+systemctl enable lightdm
 ```
 ### Uncomment %wheel ALL=(ALL) ALL
 ```
