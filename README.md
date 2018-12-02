@@ -86,7 +86,7 @@ vi /etc/pacman.conf
 #Include = /etc/pacman.d/mirrorlist/Include
 ```
 ```
-pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm lightdm-gtk-greeter bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop
+pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm lightdm-gtk-greeter bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors 
 ```
 ```
 systemctl enable NetworkManager
@@ -142,4 +142,5 @@ vim .config/gtk-3.0/settings.ini
 ```
 ```
 sudo wget https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/fonts.conf -o /etc/fonts/fonts.conf
+sensors-detect
 ```
