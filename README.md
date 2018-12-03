@@ -27,6 +27,10 @@
     - [Install Arc Icon Theme and Ranger Devicons](#install-arc-icon-theme-and-ranger-devicons)
     - [Set GTK Font](#set-gtk-font)
     - [Copy fonts.conf to prevent any monospace issues on applications](#copy-fontsconf-to-prevent-any-monospace-issues-on-applications)
+- [Previews](#previews)
+  - [Ranger](#ranger)
+  - [Desktop with Neofetch](#desktop-with-neofetch)
+  - [Fake busy](#fake-busy)
 
 ---
 ## Arch LTS UEFI Instalation
@@ -206,3 +210,11 @@ vim .config/gtk-3.0/settings.ini
 sudo wget https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/fonts/fonts.conf -o /etc/fonts/fonts.conf
 sensors-detect
 ```
+# Previews
+The final build should look somehting like this
+## Ranger
+![Ranger](previews/Ranger.png)
+## Desktop with Neofetch
+![Desktop](previews/Desktop.png)
+## Fake busy
+![FakeBusy](previews/FakeBusy.png)
