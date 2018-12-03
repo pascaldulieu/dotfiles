@@ -203,6 +203,6 @@ vim .config/gtk-3.0/settings.ini
 ```
 ### Copy fonts.conf to prevent any monospace issues on applications
 ```
-sudo wget https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/fonts.conf -o /etc/fonts/fonts.conf
+sudo wget https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/fonts/fonts.conf -o /etc/fonts/fonts.conf
 sensors-detect
 ```
