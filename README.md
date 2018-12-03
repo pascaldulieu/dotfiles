@@ -1,5 +1,6 @@
-# Step by step from scratch
+# Arch install and Rice guide
 
+## Arch LTS UEFI Instalation
 ```
 passwd
 ```
@@ -72,6 +73,7 @@ exit
 umount -a
 reboot
 ```
+## Post Instalation
 ```
 dhcpcd
 ```
