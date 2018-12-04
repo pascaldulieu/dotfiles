@@ -25,8 +25,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
-#bindsym Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots'
 bindsym $mod+Shift+p exec flameshot gui -p $HOME/Pictures/Screenshots
+bindsym $mod+Shift+f exec $term -e ranger
 
 #####################
 ##### WORKSPACE #####
