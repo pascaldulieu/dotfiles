@@ -8,6 +8,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar
 sleep 1;
-polybar bar &
+polybar top &
 
 echo "Bars launched..."
