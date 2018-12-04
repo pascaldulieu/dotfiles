@@ -233,6 +233,7 @@ bindsym $mod+d exec rofi -show run -bw 0 -lines 4 -width 30 -font "System San Fr
 # Keys
 exec_always xmodmap -e "clear lock" #disable caps lock switch
 exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escapet
+exec_always --no-startup-id numlockx on
 
 
 ################
