@@ -28,4 +28,4 @@ case "$TERM" in
     xterm|xterm-color|*-256color) color_prompt=yes;;
 esac
 
-
+export VISUAL="vim"

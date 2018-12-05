@@ -25,7 +25,7 @@
     - [Install Yosemite San Francisco Font](#install-yosemite-san-francisco-font)
     - [Install Fonts, Polybar, Applications and Themes](#install-fonts-polybar-applications-and-themes)
     - [Install Arc Icon Theme and Ranger Devicons](#install-arc-icon-theme-and-ranger-devicons)
-    - [Set GTK Font](#set-gtk-font)
+    - [Set GTK Font and Setup Light dm](#set-gtk-font-and-setup-light-dm)
     - [Copy fonts.conf to prevent any monospace issues on applications](#copy-fontsconf-to-prevent-any-monospace-issues-on-applications)
 - [Previews](#previews)
   - [Ranger](#ranger)
@@ -50,7 +50,7 @@ systemctl start sshd
 ### Setup mirrorlists
 >SSH onto the system so you can copy paste commands in
 ```
-cat "https://www.archlinux.org/mirrorlist/?country=GB&protocol=http&protocol=https&ip_version=4" > /etc/pacman.d/mirrorlist
+curl "https://www.archlinux.org/mirrorlist/?country=GB&protocol=http&protocol=https&ip_version=4" > /etc/pacman.d/mirrorlist
 sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist
 pacman -Syyy
 ```
@@ -68,6 +68,7 @@ n
 2
 ENTER
 ENTER
+w
 ```
 ### set partition file system, install arch and chroot into system
 ```
@@ -75,6 +76,9 @@ mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda2
 mount /dev/sda2 /mnt
 pacstrap -i /mnt base
+ENTER
+ENTER
+ENTER
 genfstab -U -p /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
@@ -110,7 +114,7 @@ cat /etc/fstab
 ### Setting discard for SSD's
 >if using an SSD add `rw,discard,relatime` in the options
 ```
-sed -i 's/^rw,relatime/rw,discard,relatime/g' /etc/fstab
+sed -i 's/rw,relatime/rw,discard,relatime/g' /etc/fstab
 cat /etc/fstab
 ```
 ### Enabling SSH for root user
@@ -144,7 +148,7 @@ vi /etc/pacman.conf
 ```
 ### Install X, Network Manager, I3-Gaps, Fonts, Chromium, MPV, Pulseaudio, And other applications.
 ```
-pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2
+pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance
 ```
 ### Enable Network Manager and Lightdm
 ```
@@ -175,6 +179,8 @@ echo 'exec i3' > ~/.xinitrc
 ### Install yaourt
 ```
 sudo pacman -S --needed base-devel git wget yajl
+ENTER
+ENTER
 cd /tmp
 git clone https://aur.archlinux.org/package-query.git
 cd package-query/
@@ -193,24 +199,26 @@ fc-cache
 ```
 ### Install Fonts, Polybar, Applications and Themes
 ```
-yaourt -S polybar python-pywal ttf-hack bdf-unifont siji-git i3lock-color nerd-fonts-hack nerd-fonts-source-code-pro pulseaudio-dlna flameshot-git arc-grk-theme lxapperarance lightdm-mini-greeter
+yaourt --noconfirm -S polybar python-pywal ttf-hack bdf-unifont siji-git i3lock-color nerd-fonts-hack nerd-fonts-source-code-pro pulseaudio-dlna flameshot-git arc-gtk-theme lightdm-mini-greeter
 ```
 ### Install Arc Icon Theme and Ranger Devicons
 ```
 git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-theme && ./autogen.sh --prefix=/usr && sudo make install && cd && rm -rf arc-icon-theme
 git clone https://github.com/alexanderjeurissen/ranger_devicons.git /tmp/ranger_devicons && cd /tmp/ranger_devicons && make install && cd && rm -rf /tmp/ranger_devicons
 ```
-### Set GTK Font
+### Set GTK Font and Setup Light dm
 ```
 vim .grkrc-2.0
   gtk-font-name="System San Francisco Display 11"
 vim .config/gtk-3.0/settings.ini
   gtk-font-name="System San Francisco Display 11"
+sudo wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/lightdm/lightdm.conf" -O /etc/lightdm/lightdm.conf
+sudo wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/lightdm/lightdm-mini-greeter.conf" -O /etc/lightdm/lightdm-mini-greeter.conf
 ```
 ### Copy fonts.conf to prevent any monospace issues on applications
 ```
-sudo wget https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/fonts/fonts.conf -o /etc/fonts/fonts.conf
-sensors-detect
+sudo wget https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/fonts/fonts.conf -O /etc/fonts/fonts.conf
+sudo sensors-detect
 ```
 # Previews
 The final build should look somehting like this
