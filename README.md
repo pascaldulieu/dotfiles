@@ -27,6 +27,8 @@
     - [Install Arc Icon Theme and Ranger Devicons](#install-arc-icon-theme-and-ranger-devicons)
     - [Set GTK Font and Setup Light dm](#set-gtk-font-and-setup-light-dm)
     - [Copy fonts.conf to prevent any monospace issues on applications](#copy-fontsconf-to-prevent-any-monospace-issues-on-applications)
+- [Bugs](#bugs)
+  - [lightdm not accepting password](#lightdm-not-accepting-password)
 - [Previews](#previews)
   - [Ranger](#ranger)
   - [Desktop with Neofetch](#desktop-with-neofetch)
@@ -148,7 +150,7 @@ vi /etc/pacman.conf
 ```
 ### Install X, Network Manager, I3-Gaps, Fonts, Chromium, MPV, Pulseaudio, And other applications.
 ```
-pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance
+pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm gtk3 bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance xf86-input-synaptics accountsservice 
 ```
 ### Enable Network Manager and Lightdm
 ```
@@ -208,10 +210,8 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons.git /tmp/ranger_
 ```
 ### Set GTK Font and Setup Light dm
 ```
-vim .grkrc-2.0
-  gtk-font-name="System San Francisco Display 11"
-vim .config/gtk-3.0/settings.ini
-  gtk-font-name="System San Francisco Display 11"
+mkdir -p ~/.config/gtk-3.0/ && wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/.config/gtk-3.0/settings.ini" -O ~/.config/gtk-3.0/settings.ini
+wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/.gtkrc-2.0" -O ~/..gtkrc-2.0
 sudo wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/lightdm/lightdm.conf" -O /etc/lightdm/lightdm.conf
 sudo wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/lightdm/lightdm-mini-greeter.conf" -O /etc/lightdm/lightdm-mini-greeter.conf
 ```
@@ -219,7 +219,14 @@ sudo wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/li
 ```
 sudo wget https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/fonts/fonts.conf -O /etc/fonts/fonts.conf
 sudo sensors-detect
+
+git clone https://github.com/pascaldulieu/dotfiles.git ~/.dotfiles
+then create symlinks for what you want
 ```
+# Bugs
+## lightdm not accepting password
+if you cant log in check `/etc/lightdm/lightdm-mini-greeter.conf` and change the username, if you still cant log in, install and uninstall lightdm-gtk-greeter to get the dependency that is needed to log in
+
 # Previews
 The final build should look somehting like this
 ## Ranger
