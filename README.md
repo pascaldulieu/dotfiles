@@ -150,13 +150,14 @@ vi /etc/pacman.conf
 ```
 ### Install X, Network Manager, I3-Gaps, Fonts, Chromium, MPV, Pulseaudio, And other applications.
 ```
-pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm gtk3 bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance xf86-input-synaptics accountsservice 
+pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm gtk3 bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance xf86-input-synaptics accountsservice nfs-utils krb5 urxvt-perls
 ```
 ### Enable Network Manager and Lightdm
 ```
 systemctl enable NetworkManager
 systemctl start NetworkManager
 systemctl enable lightdm
+systemctl enable nfs-client.target
 ```
 ### Enable sudo to run all commands
 ```

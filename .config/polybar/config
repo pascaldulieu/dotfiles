@@ -138,20 +138,34 @@ ramp-foreground = #666
 label-foreground = ${colors.foreground}
 
 [module/volume]
-type = internal/volume
+type = custom/script
+tail = true
+label = %output%
+exec = ~/scripts/pavolume.sh
+click-right = exec pavucontrol
+click-left = ~/scripts/pavolume.sh --togmute
+scroll-up = ~/scripts/pavolume.sh --up
+scroll-down = ~/scripts/pavolume.sh --down
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-label-volume-foreground = ${colors.foreground}
-
-format-muted-prefix = "婢 "
-format-muted-foreground = #777
-
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
-
-ramp-volume-foreground = #666
+# Swap to this voloume module if the one above does not work
+#[module/volume]
+#type = internal/volume
+#interval = 2
+#
+#format-volume = <ramp-volume> <label-volume>
+#label-volume = %percentage%%
+#label-volume-foreground = ${colors.foreground}
+#
+#format-muted-prefix = "婢 "
+#format-muted-foreground = #777
+#
+#ramp-volume-0 = 奄
+#ramp-volume-1 = 奔
+#ramp-volume-2 = 墳
+#
+#ramp-volume-foreground = #666
 
 [module/battery]
 type = internal/battery
