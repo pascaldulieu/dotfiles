@@ -224,6 +224,19 @@ sudo sensors-detect
 git clone https://github.com/pascaldulieu/dotfiles.git ~/.dotfiles
 then create symlinks for what you want
 ```
+### Disable Mouse Acceleration
+```
+sudo vim /usr/share/X11/xorg.conf.d/95-mouse-accel.conf
+
+Section "InputClass"
+           Identifier "My Mouse"
+           Driver "libinput"
+           MatchIsPointer "yes"
+           Option "AccelProfile" "flat"
+EndSection
+
+systemctl restart lightdm
+```
 # Bugs
 ## lightdm not accepting password
 if you cant log in check `/etc/lightdm/lightdm-mini-greeter.conf` and change the username, if you still cant log in, install and uninstall lightdm-gtk-greeter to get the dependency that is needed to log in
