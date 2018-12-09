@@ -5,7 +5,7 @@
 osd='no'
 inc='2'
 capvol='no'
-maxvol='200'
+maxvol='100'
 autosync='yes'
 
 # Muted status
