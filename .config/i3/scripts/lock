@@ -6,14 +6,31 @@ convert "$tmpbg" -blur 0x10 -fill black -colorize 25% "$tmpbg"
 convert /tmp/screen.png -draw "fill rgba(0, 0, 0, 0.4) rectangle 25,1050 325,970" /tmp/screen.png
 
 i3lock \
-	-t -i "$tmpbg" \
+	-t \
+	-i "$tmpbg" \
 	--timepos='x+110:h-70' \
 	--datepos='x+43:h-45' \
-	--clock --date-align 1 --datestr "Type password to unlock..." \
-	--insidecolor=00000000 --ringcolor=FFFFFFFF --line-uses-inside \
-	--keyhlcolor=d23c3dff --bshlcolor=d23c3dff --separatorcolor=00000000 \
-	--insidevercolor=00000000 --insidewrongcolor=d23c3dff \
-	--ringvercolor=ffffffff --ringwrongcolor=ffffffff --indpos='x+280:h-70' \
-	--radius=20 --ring-width=4 --veriftext='' --wrongtext='' \
-	--verifcolor="ffffffff" --timecolor="ffffffff" --datecolor="ffffffff" \
-	--noinputtext='' --force-clock -n
+	--clock \
+	--date-align 1 \
+	--datestr "Type password to unlock..." \
+	--insidecolor=00000000 \
+	--ringcolor=FFFFFFFF \
+	--line-uses-inside \
+	--keyhlcolor=d23c3dff \
+	--bshlcolor=d23c3dff \
+	--separatorcolor=00000000 \
+	--insidevercolor=00000000 \
+	--insidewrongcolor=d23c3dff \
+	--ringvercolor=ffffffff \
+	--ringwrongcolor=ffffffff \
+	--indpos='x+280:h-70' \
+	--radius=20 \
+	--ring-width=4 \
+	--veriftext='' \
+	--wrongtext='' \
+	--verifcolor="ffffffff" \
+	--timecolor="ffffffff" \
+	--datecolor="ffffffff" \
+	--noinputtext='' \
+	--force-clock \
+	-n
