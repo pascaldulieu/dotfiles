@@ -38,13 +38,12 @@ font-0 = hack:pixelsize=9;1
 font-1 = SauceCodePro Nerd Font:pixelsize=9;1
 font-2 = unifont:size=6;1
 
-modules-left = i3 power-menu
+modules-left = i3 power-menu mpd
 modules-center = xwindow
 modules-right = fs-root xbacklight volume wifi wired battery memory cpu date
 
-tray-position = right
-tray-padding = 4
-tray-maxsize = 16
+# left blank to disable the tray
+tray-position = 
 
 # bar/module specific vars
 bspwm-focused-overline = ${colors.linecolor}
@@ -205,7 +204,7 @@ type = internal/mpd
 ;format-online = <label-time>  <bar-progress>  <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>
 format-online = <label-time> %{F#88}|%{F-} <label-song> <icon-prev><icon-stop><toggle><icon-next> <icon-repeat><icon-random>
 format-online-spacing = 0
-format-online-background = #ee333333
+format-online-background = ${colors.background}
 format-online-underline = #cc333333
 format-online-padding = 3
 
@@ -219,14 +218,14 @@ label-song-ellipsis = true
 
 label-time-foreground = #777
 
-icon-prev = 玲
-icon-stop = 栗
-icon-play = 契
-icon-pause = 
-icon-next = 怜
+icon-prev = "玲 "
+icon-stop = "栗 "
+icon-play = "契 "
+icon-pause = " "
+icon-next = "怜 "
 
-icon-random = 咽
-icon-repeat = 凌
+icon-random = "咽 "
+icon-repeat = "凌 "
 
 toggle-on-foreground = ${colors.accent}
 toggle-off-foreground = #777

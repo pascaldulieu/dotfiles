@@ -1,6 +1,6 @@
 # Arch install and Rice guide
 - [Arch install and Rice guide](#arch-install-and-rice-guide)
-  - [Arch LTS UEFI Instalation](#arch-lts-uefi-instalation)
+  - [## Arch LTS UEFI Instalation](#arch-lts-uefi-instalation)
     - [Setup to allow ssh from other system](#setup-to-allow-ssh-from-other-system)
     - [Setup mirrorlists](#setup-mirrorlists)
     - [Setup paritions](#setup-paritions)
@@ -12,7 +12,7 @@
     - [Setting discard for SSD's](#setting-discard-for-ssds)
     - [Enabling SSH for root user](#enabling-ssh-for-root-user)
     - [Enable SSH and reboot](#enable-ssh-and-reboot)
-  - [Post Instalation](#post-instalation)
+  - [## Post Instalation](#post-instalation)
     - [Set Keyboard lanauge](#set-keyboard-lanauge)
     - [enable Multilib for 32 bit pacakges](#enable-multilib-for-32-bit-pacakges)
     - [Install X, Network Manager, I3-Gaps, Fonts, Chromium, MPV, Pulseaudio, And other applications.](#install-x-network-manager-i3-gaps-fonts-chromium-mpv-pulseaudio-and-other-applications)
@@ -151,7 +151,7 @@ vi /etc/pacman.conf
 ```
 ### Install X, Network Manager, I3-Gaps, Fonts, Chromium, MPV, Pulseaudio, And other applications.
 ```
-pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm gtk3 bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance xf86-input-synaptics accountsservice nfs-utils krb5 urxvt-perls ntfs
+pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm gtk3 bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance xf86-input-synaptics accountsservice nfs-utils krb5 urxvt-perls ntfs mpd ncmpcpp playerctl
 ```
 ### Enable Network Manager and Lightdm
 ```
