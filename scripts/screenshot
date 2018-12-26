@@ -1,0 +1,16 @@
+#!/bin/bash
+
+PATH_IMG=/tmp/$RANDOM$RANDOM$RANDOM
+
+mkdir $PATH_IMG &&
+
+RESULT_CAP=$(flameshot gui -p $PATH_IMG -r > $PATH_IMG/img.png && head -n 1 $PATH_IMG/img.png)
+
+if [[ $RESULT_CAP != "screenshot aborted" ]] ; then
+    
+    RESULT_CURL=$(curl -F sharex=@$PATH_IMG/img.png -F secret=SuperSecretPassword http://172.0.0.1/upload.php)
+    echo $RESULT_CURL | xclip -i -rmlastnl -selection clipboard
+    notify-send $RESULT_CURL -u normal -t 7500 -i clipboard
+fi
+
+rm -rf $PATH_IMG;

@@ -151,7 +151,7 @@ vi /etc/pacman.conf
 ```
 ### Install X, Network Manager, I3-Gaps, Fonts, Chromium, MPV, Pulseaudio, And other applications.
 ```
-pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm gtk3 bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance xf86-input-synaptics accountsservice nfs-utils krb5 urxvt-perls ntfs mpd ncmpcpp playerctl cifs-utils 
+pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor i3-gaps rxvt-unicode rofi lightdm gtk3 bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance xf86-input-synaptics accountsservice nfs-utils krb5 urxvt-perls ntfs-3g mpd ncmpcpp playerctl cifs-utils xclip redshift
 ```
 ### Enable Network Manager and Lightdm
 ```
@@ -213,7 +213,7 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons.git /tmp/ranger_
 ### Set GTK Font and Setup Light dm
 ```
 mkdir -p ~/.config/gtk-3.0/ && wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/.config/gtk-3.0/settings.ini" -O ~/.config/gtk-3.0/settings.ini
-wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/.gtkrc-2.0" -O ~/..gtkrc-2.0
+wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/.gtkrc-2.0" -O ~/.gtkrc-2.0
 sudo wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/lightdm/lightdm.conf" -O /etc/lightdm/lightdm.conf
 sudo wget "https://raw.githubusercontent.com/pascaldulieu/dotfiles/master/etc/lightdm/lightdm-mini-greeter.conf" -O /etc/lightdm/lightdm-mini-greeter.conf
 ```
@@ -237,6 +237,11 @@ Section "InputClass"
 EndSection
 
 systemctl restart lightdm
+```
+### Setup time sync
+```
+systemctl enable systemd-timesyncd
+systemctl start systemd-timesyncd
 ```
 # Bugs
 ## lightdm not accepting password
