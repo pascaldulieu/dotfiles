@@ -1,0 +1,6 @@
+#!/bin/bash
+i3-msg 'workspace9 ; append_layout /home/pascal/.config/i3/workspace-9.json'
+i3-msg 'workspace9 ; exec /usr/bin/urxvt -e tmux'
+i3-msg 'workspace9 ; exec /usr/bin/urxvt'
+i3-msg 'workspace9 ; exec /usr/bin/discord'
+i3-msg 'workspace1 ; exec /usr/bin/chromium'

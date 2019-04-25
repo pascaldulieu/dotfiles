@@ -202,7 +202,7 @@ fc-cache
 ```
 ### Install Fonts, Polybar, Applications and Themes
 ```
-yaourt --noconfirm -S polybar python-pywal ttf-hack bdf-unifont siji-git i3lock-color nerd-fonts-hack nerd-fonts-source-code-pro pulseaudio-dlna flameshot-git arc-gtk-theme pulseaudio-ctl
+yaourt --noconfirm -S polybar python-pywal ttf-hack bdf-unifont siji-git i3lock-color nerd-fonts-hack nerd-fonts-source-code-pro pulseaudio-dlna flameshot-git arc-gtk-theme pulseaudio-ctl corrupter-git 
 ```
 ### Install Arc Icon Theme and Ranger Devicons
 ```
