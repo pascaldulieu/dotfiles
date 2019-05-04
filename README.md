@@ -1,6 +1,6 @@
 # Arch install and Rice guide
 - [Arch install and Rice guide](#arch-install-and-rice-guide)
-  - [## Arch LTS UEFI Instalation](#arch-lts-uefi-instalation)
+  - [Arch LTS UEFI Instalation](#arch-lts-uefi-instalation)
     - [Setup to allow ssh from other system](#setup-to-allow-ssh-from-other-system)
     - [Setup mirrorlists](#setup-mirrorlists)
     - [Setup paritions](#setup-paritions)
@@ -12,16 +12,16 @@
     - [Setting discard for SSD's](#setting-discard-for-ssds)
     - [Enabling SSH for root user](#enabling-ssh-for-root-user)
     - [Enable SSH and reboot](#enable-ssh-and-reboot)
-  - [## Post Instalation](#post-instalation)
+  - [Post Instalation](#post-instalation)
     - [Set Keyboard lanauge](#set-keyboard-lanauge)
-    - [enable Multilib for 32 bit pacakges](#enable-multilib-for-32-bit-pacakges)
+    - [enable Multilib for 32 bit pacakges and enable color](#enable-multilib-for-32-bit-pacakges-and-enable-color)
     - [Install X, Network Manager, I3-Gaps, Fonts, Chromium, MPV, Pulseaudio, And other applications.](#install-x-network-manager-i3-gaps-fonts-chromium-mpv-pulseaudio-and-other-applications)
     - [Enable Network Manager and Lightdm](#enable-network-manager-and-lightdm)
     - [Enable sudo to run all commands](#enable-sudo-to-run-all-commands)
     - [Create user account](#create-user-account)
     - [Disable root SSH](#disable-root-ssh)
     - [Set i3 for when X starts](#set-i3-for-when-x-starts)
-    - [Install yaourt](#install-yaourt)
+    - [Install yay](#install-yay)
     - [Install Yosemite San Francisco Font](#install-yosemite-san-francisco-font)
     - [Install Fonts, Polybar, Applications and Themes](#install-fonts-polybar-applications-and-themes)
     - [Install Arc Icon Theme and Ranger Devicons](#install-arc-icon-theme-and-ranger-devicons)
@@ -38,6 +38,7 @@
 
 ---
 ## Arch LTS UEFI Instalation
+
 ---
 ### Setup to allow ssh from other system
 >set root password
@@ -133,6 +134,7 @@ reboot
 ```
 
 ## Post Instalation
+
 ---
 >If you dont get an IP on boot run dhcpd so you can ssh back in
 ```
@@ -142,11 +144,12 @@ dhcpcd
 ```
 localectl set-locale LANG="en_GB.UTF-8"
 ```
-### enable Multilib for 32 bit pacakges
+### enable Multilib for 32 bit pacakges and enable color
 ```
 vi /etc/pacman.conf
   #[multilib]
   #Include = /etc/pacman.d/mirrorlist/Include
+  #Color
 ```
 ### Install X, Network Manager, I3-Gaps, Fonts, Chromium, MPV, Pulseaudio, And other applications.
 ```
@@ -179,19 +182,11 @@ exit
 ```
 echo 'exec i3' > ~/.xinitrc
 ```
-### Install yaourt
+### Install yay
 ```
-sudo pacman -S --needed base-devel git wget yajl
-ENTER
-ENTER
 cd /tmp
-git clone https://aur.archlinux.org/package-query.git
-cd package-query/
-makepkg -si && cd /tmp/
-
-
-git clone https://aur.archlinux.org/yaourt.git
-cd yaourt/
+git clone https://aur.archlinux.org/yay.git
+cd yay
 makepkg -si
 ```
 ### Install Yosemite San Francisco Font
@@ -202,7 +197,7 @@ fc-cache
 ```
 ### Install Fonts, Polybar, Applications and Themes
 ```
-yaourt --noconfirm -S polybar python-pywal ttf-hack bdf-unifont siji-git i3lock-color nerd-fonts-hack nerd-fonts-source-code-pro pulseaudio-dlna flameshot-git arc-gtk-theme pulseaudio-ctl corrupter-git 
+yay --noconfirm -S polybar python-pywal ttf-hack bdf-unifont siji-git i3lock-color nerd-fonts-hack nerd-fonts-source-code-pro pulseaudio-dlna flameshot-git arc-gtk-theme pulseaudio-ctl corrupter-git 
 ```
 ### Install Arc Icon Theme and Ranger Devicons
 ```
