@@ -33,8 +33,6 @@
   - [Ranger](#ranger)
   - [Desktop with Neofetch](#desktop-with-neofetch)
   - [Fake busy](#fake-busy)
-  - [Lock Screen](#lock-screen)
-  - [Login Screen](#login-screen)
 
 ---
 ## Arch LTS UEFI Instalation
@@ -245,7 +243,3 @@ The final build should look somehting like this
 ![Desktop](previews/Desktop.png)
 ## Fake busy
 ![FakeBusy](previews/FakeBusy.png)
-## Lock Screen
-![Lock](previews/Lock.png)
-## Login Screen
-![Login](previews/Login.png)
