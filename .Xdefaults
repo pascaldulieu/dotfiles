@@ -64,7 +64,7 @@
 URxvt.intensityStyles:	false
 URxv.background:       [80]#000000
 URxvt.depth:		32
-URxvt.font: 		xft:Hack:size=9,xft:SauceCodePro Nerd Font:size=9,xft:Hack Nerd Font Mono:size=9
+URxvt.font: 		xft:Hack:size=9,xft:SauceCodePro Nerd Font:size=9,xft:Hack Nerd Font Mono:size=9,xft:DejaVu Serif:size=9
 URxvt.scrollBar:	false
 URxvt.cursorColor:	white
 
