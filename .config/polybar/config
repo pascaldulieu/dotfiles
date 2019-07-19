@@ -40,7 +40,7 @@ font-2 = unifont:size=6;1
 
 modules-left = i3 power-menu
 modules-center = xwindow
-modules-right = fs-root xbacklight volume wifi wired battery memory cpu date
+modules-right = fs-root xbacklight volume wifi wired battery memory temperature cpu date
 
 # left blank to disable the tray
 tray-position = 
@@ -178,8 +178,8 @@ label-charging = %percentage%%|%time%
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%% %time%
-
 format-full = <label-full>
+
 format-full-prefix = " "
 format-full-prefix-foreground = #666
 
@@ -288,3 +288,24 @@ menu-0-2-exec = pcmanfm
 type = internal/xwindow
 format = <label>
 label-maxlen = 50
+
+[module/temperature]
+type = internal/temperature
+interval = 1
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 3
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path =  /sys/devices/virtual/thermal/thermal_zone1/hwmon1/temp1_input
+warn-temperature = 80
+units = false
+format = <label>
+label = %temperature-c%°

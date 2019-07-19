@@ -208,7 +208,7 @@ bindsym $mod+Shift+s sticky toggle
 #for_window [class="mpv"] floating enable
 
 # startup
-exec_always --no-startup-id wal -i Pictures/wal/
+exec_always --no-startup-id wal --backend haishoku -i Pictures/wal/
 exec_always --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1-1 --off --output HDMI-1-1 --off
 
 # Desktop xrandr
