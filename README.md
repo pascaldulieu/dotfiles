@@ -101,6 +101,7 @@ systemctl enable sshd
 mkdir /boot/EFI
 mount /dev/sda1 /boot/EFI
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+mkdir -p /boot/grub/locale/
 cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -151,6 +152,7 @@ vi /etc/pacman.conf
 ```
 ### Install X, Network Manager, I3-Gaps, Fonts, Chromium, MPV, Pulseaudio, And other applications.
 ```
+pacman -Syu archlinux-keyring
 pacman -Sy networkmanager xorg-server xorg-xinit xorg-apps mesa xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl sudo vim nm-connection-editor wget git base-devel gcc make binutils i3-gaps rxvt-unicode rofi lightdm gtk3 bash-completion feh noto-fonts chromium mpv youtube-dl ranger pulseaudio pavucontrol htop lm_sensors dunst alsa-utils xorg-xfd numlockx sxiv compton rclone fuse-common fuse2 lxappearance xf86-input-synaptics accountsservice nfs-utils krb5 urxvt-perls ntfs-3g mpd ncmpcpp playerctl cifs-utils xclip redshift lightdm-gtk-greeter rrdtool noto-fonts-emoji 
 ```
 ### Enable Network Manager and Lightdm
